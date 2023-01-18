@@ -1,0 +1,5 @@
+ruby '3.0.4'
+
+gem 'nokogiri'
+gem 'watir'
+gem 'pry'
