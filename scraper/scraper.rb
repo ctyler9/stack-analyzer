@@ -50,7 +50,7 @@ BRANDS.each do |brand|
 
             puts image_url
 
-            next if image_url.empty? || price.empty?
+            next if image_url.empty? || price.empty? || !image_url.start_with?("https")
 
             File.open("data/#{brand}.txt", "a+") do |f|
                 f.puts("#{image_url},#{price}")
