@@ -129,6 +129,3 @@ dmypy.json
 .pyre/
 
 
-# project specific 
-scraper/images
-data/
