@@ -1,3 +1,10 @@
+/* .file-dropzone {
+  height: 210px;
+  width: 210px;
+  background-color: mistyrose;
+  border: 2px dashed gray;
+} */
+
 .App {
   text-align: center;
 }
@@ -32,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
