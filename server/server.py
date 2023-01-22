@@ -2,8 +2,11 @@ import torch
 from PIL import Image
 import torchvision.transforms.functional as TF
 
-from flask import Flask
+from flask import Flask, request
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 
 classes_dict = {0: 'audemarspiguet',
@@ -30,12 +33,15 @@ def home():
     return "Hello World"
 
 
-@app.route("/classify")
+@app.route("/classify", methods=["POST", "OPTIONS"])
 def classify():
-    image = Image.open("./rolex.jpg")
+    files = request.files
+    image = Image.open(files['image'])
     img_tensor = TF.to_tensor(image)
     x = TRANSFORM(img_tensor).unsqueeze(0)
     prediction = CLASSIFIER(x)
+
+    print(prediction)
 
     return {
         "brandPredictions": sorted(
