@@ -1,2 +1,2 @@
 # stack-analyzer
-Full stack ML app to analyze ()
+Full stack ML app to classify watch brands
